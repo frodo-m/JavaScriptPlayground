@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Playground</title>
+  <link rel="icon" href="imgs/grow.jpg" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>JS Playground</h1>
+
+  <!-- if...else condition -->
+  <button id="myBtn">Click me</button>
+  <p id="userStatus"></p>
+
+  <hr style="margin-bottom: 20px" />
+  <!-- if...else condition and switch statement -->
+  <label for="weather">Select the weather type today: </label>
+  <select id="weather">
+    <option value="">--Make a choice--</option>
+    <option value="sunny">Sunny</option>
+    <option value="rainy">Rainy</option>
+    <option value="snowing">Snowing</option>
+    <option value="overcast">Overcast</option>
+  </select>
+  <p id="weatherStats"></p>
+
+  <hr />
+
+  <!-- ternary operator -->
+  <label for="theme">Select theme: </label>
+  <select name="theme" id="theme">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+    <option value="purple">Purple</option>
+    <option value="yellow">Yellow</option>
+    <option value="psychedelic">psychedelic</option>
+  </select>
+
+  <hr />
+
+  <!-- Calender -->
+  <div id="calender" style="height: 100%; overflow: auto">
+    <label for="selectMonth">Select month: </label>
+    <select id="selectMonth">
+      <option value="January">January</option>
+      <option value="February">February</option>
+      <option value="March">March</option>
+      <option value="April">April</option>
+      <option value="May">May</option>
+      <option value="June">June</option>
+      <option value="July">July</option>
+      <option value="August">August</option>
+      <option value="September">September</option>
+      <option value="October">October</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
+    </select>
+
+    <h1 id="monthName">January</h1>
+    <ul id="monthList"></ul>
+  </div>
+
+  <hr />
+  Enter score: <input type="text" id="score" />
+  <button id="scoreBtn">Submit</button>
+  <section id="scoreMachine"></section>
+
+  <hr />
+
+  <!-- Random canvas circles -->
+  <a href="pages/random-canvas-circles.html" target="_blank">Randome Canvas Circles<img class="external"
+      src="icons/external-link-svgrepo-com.svg" /></a>
+
+  <!-- Log Key -->
+  <hr style="margin-bottom: 20px" />
+  <div id="inputLog">
+    <h3>Log Key, Check the console
+      <input type="text" name="text" id="logKey" />
+    </h3>
+  </div>
+
+  <hr />
+
+  <!-- Display Message Box -->
+  <a href="pages/display-message-box.html" target="_blank">Disply Message Box<img class="external"
+      src="icons/external-link-svgrepo-com.svg" /></a>
+
+  <hr />
+  <!-- squared, cubed, factorial -->
+  <h3>Squared. Cubed. Factorial</h3>
+  <input type="text" id="numIn">
+  <p id="numOut"></p>
+
+  <hr>
+  <!-- add 7 -->
+  <div id="7adder">
+    <h3>Add 7</h3>
+    <input type="text" id="add7">
+    <button id="add7Btn">Add 7</button>
+    <p id="add7Out"></p>
+    </input>
+  </div>
+
+  <hr>
+
+  <!-- multiply function -->
+  <div id="multiply">
+    <h3>Multiply</h3>
+    <p>
+      <input type="text" id="multiNum1" style="width: 50px;" />
+      x
+      <input type="text" id="multiNum2" style="width: 50px;" />
+      <button id="multiBtn">Calculate</button>
+    </p>
+    <p id="multiOut"></p>
+  </div>
+
+  <hr>
+  <!-- capitalize function -->
+  <div>
+    <h3>Capitalize</h3>
+    <input type="text" id="capIn" />
+    <button id="capBtn">Capitalize</button>
+    <p id="capOut"></p>
+  </div>
+
+  <hr>
+  <!-- last letter -->
+  <div>
+    <h3>Last Letter</h3>
+    <input type="text" id="lastCharIn" />
+    <button id="lastCharBtn">Get Character</button>
+    <p id="lastCharOut"></p>
+  </div>
+
+  <!-- fizz buzz -->
+  <div id="fizzBuzz">
+    <h3>Fizz Buzz</h3>
+    <input type="text" id="fbInput">
+    <button id="fbBtn">FizzBuzzz</button>
+    <p id="fbOut"></p>
+  </div>
+
+  <hr />
+  <h3>Rochambeau</h3>
+  <a href="Rochambeau/index.html">Go <img class="external" src="/icons/external-link-svgrepo-com.svg" alt=""></a>
+  <hr />
+  <script src="script.js"></script>
+</body>
+
+</html>

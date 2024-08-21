@@ -1,0 +1,61 @@
+:root {
+  --primary-color: rgba(214, 83, 23, 0.9);
+  --secondary-color: rgba(255, 255, 255, 0.9);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: order-box;
+}
+
+body {
+  padding: 20px 50px;
+}
+
+#monthList li {
+  padding: 4px 50px;
+  width: 20px;
+  background-color: var(--primary-color);
+  text-align: center;
+  color: white;
+}
+
+a {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+#monthList {
+  list-style: none;
+  padding: 0 80px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.external {
+  height: 14px;
+}
