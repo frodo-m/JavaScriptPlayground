@@ -1,0 +1,2 @@
+# JavaScriptPlayground
+Just training
