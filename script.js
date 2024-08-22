@@ -359,4 +359,52 @@ fbInput.addEventListener("keydown", (e) => {
   }
 });
 
+// Create forEach function
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let arrayList = '<ol>';
+const getFruit = (fruit) => {
+  arrayList += `<li> ${fruit} </li>`;
+};
+fruits.push("Lemon");
+fruits.forEach(getFruit);
+arrayList += `<li>${fruits[8] = 'Papaya'} ~ this is a <b>hole</b> in an array, index = ${fruits.length} - 1</li>`;
+fruits[9] = { firstName: 'Mohanad', lastName: 'Bassiouny' };
+arrayList += `<li>first name ${fruits[9].firstName} last name: ${fruits[9].lastName}</li>`
+arrayList += `<li>Is it an array? ${Array.isArray(fruits)} 🙀</li>`;
+arrayList += `<li>Will instance of return that fruits is an array? ${fruits instanceof Array}... Oh GOD 😵</li>`
+
+arrayList += `Just nesting arrays in an object<br>`;
+const myObj = {
+  name: 'Mohanad',
+  age: 26,
+  cars: [
+    { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+    { name: "BMW", models: ["320", "X3", "X5"] },
+    { name: "Fiat", models: ["500", "Panda"] }
+  ]
+}
+
+const getCar = () => {
+  let car = '';
+
+  for (let i in myObj.cars) {
+    car += `<b>${myObj.cars[i].name}: </b>`;
+    for (let j in myObj.cars[i].models) {
+      car += `${myObj.cars[i].models[j]}, `;
+    }
+    car += '<br>';
+  }
+
+  return car;
+};
+
+arrayList += `Return my OBJECTS THEIF 🥷.
+Here is your OBJECTS: <br>Name:${myObj.name},<br> Age${myObj.age},<br> Cars: <br>${getCar()} `
+
+arrayList += '</ol>';
+
+document.getElementById('demo').innerHTML = arrayList;
+
+
 
