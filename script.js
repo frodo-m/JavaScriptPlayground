@@ -432,14 +432,14 @@ const seMultiply = () => {
 forLoopBtn.addEventListener('click', seMultiply);
 forLoopReset.addEventListener('click', () => forLoop.textContent = "");
 
-const cats3 = ["Pete", "Biggles", "Jasmine"];
+const cats2 = cats;
 let myFavCats = 'My favorite cats are: ';
 
-for (let i = 0; i < cats3.length; i++) {
-  if (i === cats3.length - 1) {
-    myFavCats += `and ${cats3[i]}.`
+for (let i = 0; i < cats2.length; i++) {
+  if (i === cats2.length - 1) {
+    myFavCats += `and ${cats2[i]}.`
   } else {
-    myFavCats += `${cats3[i]},`;
+    myFavCats += `${cats2[i]},`;
   }
 }
 
@@ -478,3 +478,64 @@ const getContact = () => {
 }
 
 searchConBtn.addEventListener('click', getContact);
+
+// Use continue in loops
+const genInt = document.getElementById("genInt");
+const genIntOut = document.getElementById("genIntOut");
+const genIntBtn = document.getElementById("genIntBtn");
+
+const getGenInt = () => {
+  genIntOut.innerHTML = 'Output: <br> ';
+  const num = genInt.value;
+  genInt.value = '';
+  genInt.focus();
+  for (let i = 1; i <= num; i++) {
+    let sqRoot = Math.sqrt(i);
+    if (Math.floor(sqRoot) !== sqRoot) {
+      continue;
+    }
+    genIntOut.innerHTML += `${i}<br>`;
+  }
+};
+
+genIntBtn.addEventListener('click', getGenInt);
+
+// while abd do...while
+// I'll use that declared cats3 array
+const whileLoopOut = document.getElementById("whileLoopOut");
+
+const cats3 = cats;
+let cats3Text = "<b>while loop</b> favorite cats: ";
+
+let i3 = 0;
+
+while (i3 < cats3.length) {
+  if (i3 === cats3.length - 1) {
+    cats3Text += `and ${cats3[i3]}.`;
+  } else {
+    cats3Text += `${cats3[i3]}, `;
+  }
+
+  i3++;
+}
+
+whileLoopOut.innerHTML = cats3Text;
+
+const doWhileLoopOut = document.getElementById('doWhileLoopOut');
+
+const cats4 = cats;
+let cats4Text = "<b>do...while loop</b> favorite cats: ";
+
+let i4 = 0;
+
+do {
+  if (i4 === cats4.length - 1) {
+    cats4Text += `and ${cats4[i4]}.`;
+  } else {
+    cats4Text += `${cats4[i4]}, `;
+  }
+
+  i4++;
+} while (i4 < cats4.length);
+
+doWhileLoopOut.innerHTML = cats4Text;
