@@ -406,5 +406,75 @@ arrayList += '</ol>';
 
 document.getElementById('demo').innerHTML = arrayList;
 
+// function lCat(cat) {
+//   return cat.startsWith('L');
+// }
+
+const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+const filterL = cats.filter((cat) => cat.startsWith("L")).toString();
+console.log(filterL);
 
 
+// forLoop
+const forLoop = document.getElementById("forLoop");
+const forLoopBtn = document.getElementById("forLoopBtn");
+const forLoopReset = document.getElementById("forLoopReset");
+
+const seMultiply = () => {
+  for (let i = 1; i < 10; i++) {
+    const result = `${i} x ${i} = ${i * i}`;
+    forLoop.innerHTML += `${result}<br>`;
+  }
+  forLoop.innerHTML += '<br>Finished!<br>';
+}
+
+forLoopBtn.addEventListener('click', seMultiply);
+forLoopReset.addEventListener('click', () => forLoop.textContent = "");
+
+const cats3 = ["Pete", "Biggles", "Jasmine"];
+let myFavCats = 'My favorite cats are: ';
+
+for (let i = 0; i < cats3.length; i++) {
+  if (i === cats3.length - 1) {
+    myFavCats += `and ${cats3[i]}.`
+  } else {
+    myFavCats += `${cats3[i]},`;
+  }
+}
+
+console.log(myFavCats);
+
+
+// Use break in loop
+const searchCon = document.getElementById("searchCon");
+const searchConBtn = document.getElementById("searchConBtn");
+const searchConRes = document.getElementById("searchConRes");
+
+const contacts = [
+  "Chris:2232322",
+  "Sarah:3453456",
+  "Bill:7654322",
+  "Mary:9998769",
+  "Dianne:9384975",
+];
+
+const getContact = () => {
+  const searchName = searchCon.value.toLowerCase();
+  searchCon.value = "";
+  searchCon.focus();
+  searchConRes.textContent = "";
+  for (const contact of contacts) {
+    const splitContact = contact.split(':');
+    if (splitContact[0].toLowerCase() === searchName) {
+      searchConRes.textContent = `${splitContact[0]}'s Number is ${splitContact[1]}`;
+      break;
+    }
+    if (splitContact[0].toLowerCase() !== searchName) {
+      searchConRes.textContent = `Contact not found`;
+      break;
+    }
+  }
+}
+
+searchConBtn.addEventListener('click', getContact);
