@@ -539,3 +539,35 @@ do {
 } while (i4 < cats4.length);
 
 doWhileLoopOut.innerHTML = cats4Text;
+
+const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+const admitted = document.getElementById("admitted");
+const refused = document.getElementById("refused");
+
+const admittedList = [];
+const refusedList = [];
+
+// forEach
+// people.forEach((person) => {
+// if (person === 'Phil' || person === 'Lola') {
+//   refusedList.push(person);
+// } else {
+//   admittedList.push(person);
+// }
+
+// admitted.textContent = `Admitted: ${admittedList.join(', ')}.`;
+// refused.textContent = `Refused: ${refusedList.join(', ')}.`
+// })
+
+// for...of
+for (let person of people) {
+  if (person === 'Phil' || person === 'Lola') {
+    refusedList.push(person);
+  } else {
+    admittedList.push(person);
+  }
+
+}
+admitted.textContent = `Admitted: ${admittedList.join(', ')}.`;
+refused.textContent = `Refused: ${refusedList.join(', ')}.`
