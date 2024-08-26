@@ -571,3 +571,97 @@ for (let person of people) {
 }
 admitted.textContent = `Admitted: ${admittedList.join(', ')}.`;
 refused.textContent = `Refused: ${refusedList.join(', ')}.`
+
+// DOM Manipulation
+const updateDOMBtn = document.getElementById("updateDOM");
+const domContainer = document.getElementById("domContainer");
+
+const updateDOM = () => {
+  const redP = document.createElement('p');
+  redP.setAttribute("style", "color: red");
+  redP.textContent = "Hey I'm red";
+
+  const blueH3 = document.createElement('h3');
+  blueH3.setAttribute('style', 'color: blue');
+  blueH3.textContent = "I'm a blue h3";
+
+  domContainer.appendChild(redP);
+  domContainer.appendChild(blueH3);
+
+  const divCon = document.createElement('div');
+  divCon.setAttribute('style', 'border: 1px solid black; background-color: pink');
+
+  const divH1 = document.createElement('h1');
+  divH1.textContent = "I'm in a div";
+  const divP = document.createElement('p');
+  divP.textContent = "ME TOO!";
+
+  domContainer.appendChild(divCon);
+  divCon.appendChild(divH1);
+  divCon.appendChild(divP);
+};
+
+updateDOMBtn.addEventListener('click', updateDOM);
+
+// Events
+const alertEventBtn = document.getElementById('alertEventBtn');
+const alertEventBtn2 = document.getElementById('alertEventBtn2');
+
+alertEventBtn.onclick = () => alert('Hello World');
+alertEventBtn2.addEventListener('click', () => { alert('Hello World') });
+
+const testes = document.getElementById("testBtn");
+
+testes.addEventListener('click', (e) => {
+  if (e.target.style.backgroundColor === "blue") {
+    e.target.style.backgroundColor = "var(--primary-color)";
+    e.target.style.color = "white";
+    e.target.textContent = "I'm BLUE";
+    e.target.style.fontWeight = "normal";
+  } else {
+    e.target.style.backgroundColor = "blue";
+    e.target.style.color = "var(--primary-color)";
+    e.target.style.fontWeight = "bold";
+    e.target.textContent = "I'm ORANGE WTF";
+  }
+});
+
+// shopping List
+const shopInput = document.getElementById("shopIn");
+const shopBtn = document.getElementById("shopBtn");
+const shopList = document.getElementById("shopList");
+
+const addItemList = () => {
+  const item = shopInput.value.trim();
+
+  // Checher
+  if (item !== "") {
+    // for every time the input value is null create an item with a li element
+    const listItem = document.createElement("li");
+    listItem.textContent = item;
+
+    // Attach remove button
+    const remItemBtn = document.createElement("button");
+    remItemBtn.textContent = 'Remove';
+    remItemBtn.setAttribute('style', 'border: none; padding: 2px 2px; font-size: 12px; margin-left: 4px; background-color: white; color: var(--primary-color);');
+
+    // Attach remove functionality
+    remItemBtn.addEventListener('click', () => {
+      shopList.removeChild(listItem);
+    });
+
+    // Append the remove button to the list item
+    listItem.appendChild(remItemBtn);
+
+    // Append the list item to the shopingLIst
+    shopList.appendChild(listItem);
+
+    // For every input refocus on the input field
+    shopInput.value = "";
+  }
+
+  shopInput.focus();
+}
+
+
+shopBtn.addEventListener('click', addItemList);

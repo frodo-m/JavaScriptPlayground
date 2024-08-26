@@ -7,6 +7,7 @@
   <title>JS Playground</title>
   <link rel="icon" href="imgs/grow.jpg" />
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -205,10 +206,41 @@
   <p id="refused" aria-live="polite"></p>
 
   <hr />
+  <h3>DOM Manipulation</h3>
+  <button id="updateDOM" aria-label="Update DOM">Update DOM</button>
+  <div id="domContainer" aria-live="polite"></div>
 
-  <p></p>
+  <hr />
+  <h3>Events</h3>
+  <section id="eventMethods">
+    <div id="method1">
+      <h4>Method 1</h4>
+      <button onclick="alert('Hello World')" aria-label="Alert">Click Me</button>
+    </div>
+    <div id="method2">
+      <h4>Method 2</h4>
+      <button id="alertEventBtn" aria-label="Click me to perform an action">Touch Me</button>
+    </div>
+    <div id="method3">
+      <h4>Method 3</h4>
+      <button id="alertEventBtn2" aria-label="Click me to perform an action">Feel It</button>
+    </div>
+  </section>
+  <button id="testBtn">I'm BLUE</button>
 
-  <script src="script.js"></script>
+  <hr />
+  <h3>Shopping List</h3>
+  <section>
+    <label for="shopIn">Enter a new item: </label>
+    <input type="text" id="shopIn">
+    <button id="shopBtn">Add Item</button>
+    <ul id="shopList"></ul>
+  </section>
+
+  <hr />
+
+
+
 </body>
 
 </html>
