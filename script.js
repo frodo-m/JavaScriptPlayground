@@ -663,5 +663,105 @@ const addItemList = () => {
   shopInput.focus();
 }
 
-
 shopBtn.addEventListener('click', addItemList);
+
+// addEventListener('beforeunload', (event) => {
+//   // show the confirmation dialog
+//   event.preventDefault();
+// });
+
+
+
+
+// Mouse events
+const mouseBtns = document.querySelector('#mouseBtns');
+const mouseMsg = document.querySelector('#mouseMsg');
+
+// Disable context menu when right mouse button is clicked
+mouseBtns.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+});
+
+mouseBtns.addEventListener('mouseup', (e) => {
+  switch (e.button) {
+    case 0:
+      mouseMsg.textContent = 'Left mouse button clicked.';
+      break;
+    case 1:
+      mouseMsg.textContent = 'Middle mouse button clicked.';
+      break;
+    case 2:
+      mouseMsg.textContent = 'Right mouse button clicked.';
+      break;
+    case 3:
+      mouseMsg.textContent = 'Back-ward mouse button clicked.';
+      break;
+    case 4:
+      mouseMsg.textContent = 'For-ward mouse button clicked.';
+      break;
+    default:
+      mouseMsg.textContent = `Unknown mouse button code: ${e.button}`;
+  }
+});
+
+// Keyboard events
+const btnKeys = document.querySelector('#btnKeys');
+const keyMsgs = document.querySelector('#keyMsgs');
+
+btnKeys.addEventListener('click', (e) => {
+  let keys = [];
+
+  if (e.shiftKey) keys.push('shift');
+  if (e.ctrlKey) keys.push('ctrl');
+  if (e.altKey) keys.push('alt');
+  if (e.metaKey) keys.push('meta');
+
+  keyMsgs.textContent = `Keys: ${keys.join('+')}`;
+});
+
+// track mouse location
+const trackMouse = document.querySelector('#trackMouse');
+const logMouse = document.querySelector("#logMouse");
+
+trackMouse.addEventListener('mousemove', (e) => {
+  logMouse.innerText = `Screen X/Y: (${e.screenX}, ${e.screenY})
+  Client X/Y: (${e.clientX}, ${e.clientY})`
+});
+
+// Key press events
+const keyPressure = document.querySelector("#keyPressure");
+const keyPressOut = document.querySelector('#keyPressOut');
+
+keyPressure.addEventListener('keydown', (e) => {
+  keyPressOut.textContent = e.key;
+});
+keyPressure.addEventListener('keypress', (e) => {
+  keyPressOut.textContent = e.key;
+});
+keyPressure.addEventListener('keyup', (e) => {
+  keyPressOut.textContent = e.key;
+});
+
+// Handle multiple events with 1 event
+const home = document.querySelector("#home");
+const dashboard = document.querySelector("#dashboard");
+const report = document.querySelector("#report");
+const listMenu = document.querySelector("#listMenu");
+
+listMenu.addEventListener('click', (e) => {
+  let target = e.target;
+
+  switch (target.id) {
+    case 'home':
+      console.log('Home menu item was clicked');
+      break;
+    case 'dashboard':
+      console.log('Dashboard menu item was clicked');
+      break;
+    case 'report':
+      console.log('Report menu item was clicked');
+      break;
+  }
+});
+
+

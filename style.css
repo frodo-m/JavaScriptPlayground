@@ -70,3 +70,10 @@ button {
   text-align: center;
   margin-bottom: 20px;
 }
+
+#trackMouse {
+  background-color: goldenrod;
+  height: 200px;
+  width: 400px;
+
+}
