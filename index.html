@@ -13,39 +13,40 @@
   <h1>JS Playground</h1>
 
   <!-- if...else condition -->
-  <button id="myBtn">Click me</button>
-  <p id="userStatus"></p>
+  <button id="myBtn" aria-label="Click me to perform an action">Click me</button>
+  <p id="userStatus" aria-live="polite"></p>
 
   <hr style="margin-bottom: 20px" />
+
   <!-- if...else condition and switch statement -->
-  <label for="weather">Select the weather type today: </label>
-  <select id="weather">
+  <label for="weather">Select the weather type today:</label>
+  <select id="weather" aria-label="Weather type selection">
     <option value="">--Make a choice--</option>
     <option value="sunny">Sunny</option>
     <option value="rainy">Rainy</option>
     <option value="snowing">Snowing</option>
     <option value="overcast">Overcast</option>
   </select>
-  <p id="weatherStats"></p>
+  <p id="weatherStats" aria-live="polite"></p>
 
   <hr />
 
   <!-- ternary operator -->
-  <label for="theme">Select theme: </label>
-  <select name="theme" id="theme">
+  <label for="theme">Select theme:</label>
+  <select name="theme" id="theme" aria-label="Theme selection">
     <option value="light">Light</option>
     <option value="dark">Dark</option>
     <option value="purple">Purple</option>
     <option value="yellow">Yellow</option>
-    <option value="psychedelic">psychedelic</option>
+    <option value="psychedelic">Psychedelic</option>
   </select>
 
   <hr />
 
-  <!-- Calender -->
+  <!-- Calendar -->
   <div id="calender" style="height: 100%; overflow: auto">
-    <label for="selectMonth">Select month: </label>
-    <select id="selectMonth">
+    <label for="selectMonth">Select month:</label>
+    <select id="selectMonth" aria-label="Month selection">
       <option value="January">January</option>
       <option value="February">February</option>
       <option value="March">March</option>
@@ -60,132 +61,152 @@
       <option value="December">December</option>
     </select>
 
-    <h1 id="monthName">January</h1>
-    <ul id="monthList"></ul>
+    <h2 id="monthName" tabindex="0">January</h2>
+    <ul id="monthList" role="list"></ul>
   </div>
 
   <hr />
-  Enter score: <input type="text" id="score" />
-  <button id="scoreBtn">Submit</button>
-  <section id="scoreMachine"></section>
+
+  <label for="score">Enter score:</label>
+  <input type="text" id="score" aria-label="Score input" />
+  <button id="scoreBtn" aria-label="Submit score">Submit</button>
+  <section id="scoreMachine" aria-live="polite"></section>
 
   <hr />
 
   <!-- Random canvas circles -->
-  <a href="pages/random-canvas-circles.html" target="_blank">Randome Canvas Circles<img class="external"
-      src="icons/external-link-svgrepo-com.svg" /></a>
+  <a href="pages/random-canvas-circles.html" target="_blank" aria-label="Open Random Canvas Circles page">Random Canvas
+    Circles
+    <img class="external" src="icons/external-link-svgrepo-com.svg" alt="External link icon" />
+  </a>
 
   <!-- Log Key -->
   <hr style="margin-bottom: 20px" />
   <div id="inputLog">
-    <h3>Log Key, Check the console
-      <input type="text" name="text" id="logKey" />
-    </h3>
+    <h3>Log Key, Check the console</h3>
+    <input type="text" name="text" id="logKey" aria-label="Log key input" />
   </div>
 
   <hr />
 
   <!-- Display Message Box -->
-  <a href="pages/display-message-box.html" target="_blank">Disply Message Box<img class="external"
-      src="icons/external-link-svgrepo-com.svg" /></a>
+  <a href="pages/display-message-box.html" target="_blank" aria-label="Open Display Message Box page">Display Message
+    Box
+    <img class="external" src="icons/external-link-svgrepo-com.svg" alt="External link icon" />
+  </a>
 
   <hr />
-  <!-- squared, cubed, factorial -->
-  <h3>Squared. Cubed. Factorial</h3>
-  <input type="text" id="numIn">
-  <p id="numOut"></p>
 
-  <hr>
-  <!-- add 7 -->
+  <!-- Squared, cubed, factorial -->
+  <h3>Squared. Cubed. Factorial</h3>
+  <input type="text" id="numIn" aria-label="Input number for squaring, cubing, or factorial" />
+  <p id="numOut" aria-live="polite"></p>
+
+  <hr />
+
+  <!-- Add 7 -->
   <div id="7adder">
     <h3>Add 7</h3>
-    <input type="text" id="add7">
-    <button id="add7Btn">Add 7</button>
-    <p id="add7Out"></p>
-    </input>
+    <input type="text" id="add7" aria-label="Input number to add 7" />
+    <button id="add7Btn" aria-label="Add 7 to the input number">Add 7</button>
+    <p id="add7Out" aria-live="polite"></p>
   </div>
 
-  <hr>
+  <hr />
 
-  <!-- multiply function -->
+  <!-- Multiply function -->
   <div id="multiply">
     <h3>Multiply</h3>
     <p>
-      <input type="text" id="multiNum1" style="width: 50px;" />
+      <input type="text" id="multiNum1" style="width: 50px;" aria-label="First number for multiplication" />
       x
-      <input type="text" id="multiNum2" style="width: 50px;" />
-      <button id="multiBtn">Calculate</button>
+      <input type="text" id="multiNum2" style="width: 50px;" aria-label="Second number for multiplication" />
+      <button id="multiBtn" aria-label="Calculate multiplication">Calculate</button>
     </p>
-    <p id="multiOut"></p>
-  </div>
-
-  <hr>
-  <!-- capitalize function -->
-  <div>
-    <h3>Capitalize</h3>
-    <input type="text" id="capIn" />
-    <button id="capBtn">Capitalize</button>
-    <p id="capOut"></p>
-  </div>
-
-  <hr>
-  <!-- last letter -->
-  <div>
-    <h3>Last Letter</h3>
-    <input type="text" id="lastCharIn" />
-    <button id="lastCharBtn">Get Character</button>
-    <p id="lastCharOut"></p>
-  </div>
-
-  <!-- fizz buzz -->
-  <div id="fizzBuzz">
-    <h3>Fizz Buzz</h3>
-    <input type="text" id="fbInput">
-    <button id="fbBtn">FizzBuzzz</button>
-    <p id="fbOut"></p>
+    <p id="multiOut" aria-live="polite"></p>
   </div>
 
   <hr />
+
+  <!-- Capitalize function -->
+  <div>
+    <h3>Capitalize</h3>
+    <input type="text" id="capIn" aria-label="Input text to capitalize" />
+    <button id="capBtn" aria-label="Capitalize the input text">Capitalize</button>
+    <p id="capOut" aria-live="polite"></p>
+  </div>
+
+  <hr />
+
+  <!-- Last letter -->
+  <div>
+    <h3>Last Letter</h3>
+    <input type="text" id="lastCharIn" aria-label="Input text to get the last character" />
+    <button id="lastCharBtn" aria-label="Get the last character of the input text">Get Character</button>
+    <p id="lastCharOut" aria-live="polite"></p>
+  </div>
+
+  <!-- Fizz Buzz -->
+  <div id="fizzBuzz">
+    <h3>Fizz Buzz</h3>
+    <input type="text" id="fbInput" aria-label="Input number for Fizz Buzz" />
+    <button id="fbBtn" aria-label="Run Fizz Buzz on the input number">FizzBuzz</button>
+    <p id="fbOut" aria-live="polite"></p>
+  </div>
+
+  <hr />
+
   <h3>Rochambeau</h3>
-  <a target="_blank" href="https://frodo-m.github.io/Rochambeau/">Go <img class="external"
-      src="/icons/external-link-svgrepo-com.svg" alt=""></a>
+  <a target="_blank" href="https://frodo-m.github.io/Rochambeau/" aria-label="Go to Rochambeau game">Go
+    <img class="external" src="/icons/external-link-svgrepo-com.svg" alt="External link icon" />
+  </a>
+
   <hr />
 
   <!-- List fruits -->
   <h3>Array</h3>
-  <p id="demo"></p>
+  <p id="demo" aria-live="polite"></p>
 
   <hr />
+
   <h3>Loops</h3>
   <h4>for Loop</h4>
-  <button id="forLoopBtn">Calculate</button>
-  <button id="forLoopReset">Reset</button>
-  <p id="forLoop"></p>
+  <button id="forLoopBtn" aria-label="Calculate using for loop">Calculate</button>
+  <button id="forLoopReset" aria-label="Reset for loop">Reset</button>
+  <p id="forLoop" aria-live="polite"></p>
 
   <hr />
+
   <h4>Using break in loops</h4>
-  <label for="searchCon">Search by contact name: </label>
-  <input type="text" id="searchCon">
+  <label for="searchCon">Search by contact name:</label>
+  <input type="text" id="searchCon" aria-label="Search contact name" />
   <p style="font-size: 12px; line-height: 0; opacity: 64%;">Try: Sarah, Chris, Bill, Mary, Dianne</p>
-  <button id="searchConBtn">Search</button>
-  <p id="searchConRes"></p>
+  <button id="searchConBtn" aria-label="Search for contact name">Search</button>
+  <p id="searchConRes" aria-live="polite"></p>
 
   <hr />
+
   <h4>Using continue in loops</h4>
-  <label for="genInt">Enter number: </label>
-  <input type="text" id="genInt">
-  <button id="genIntBtn">Generate integer squares</button>
-  <p id='genIntOut'></p>
+  <label for="genInt">Enter number:</label>
+  <input type="text" id="genInt" aria-label="Input number to generate integer squares" />
+  <button id="genIntBtn" aria-label="Generate integer squares">Generate integer squares</button>
+  <p id='genIntOut' aria-live="polite"></p>
 
   <hr />
+
   <h4>while and do...while Loop</h4>
-  <p id="whileLoopOut"></p>
-  <p id="doWhileLoopOut"></p>
+  <p id="whileLoopOut" aria-live="polite"></p>
+  <p id="doWhileLoopOut" aria-live="polite"></p>
 
   <hr />
+
   <h3>Admitted & Refused List</h3>
-  <p id="admitted"></p>
-  <p id="refused"></p>
+  <p id="admitted" aria-live="polite"></p>
+  <p id="refused" aria-live="polite"></p>
+
+  <hr />
+
+  <p></p>
 
   <script src="script.js"></script>
 </body>
