@@ -500,7 +500,7 @@ const getGenInt = () => {
 
 genIntBtn.addEventListener('click', getGenInt);
 
-// while abd do...while
+// while and do...while
 // I'll use that declared cats3 array
 const whileLoopOut = document.getElementById("whileLoopOut");
 
@@ -634,7 +634,7 @@ const shopList = document.getElementById("shopList");
 const addItemList = () => {
   const item = shopInput.value.trim();
 
-  // Checher
+  // Checker
   if (item !== "") {
     // for every time the input value is null create an item with a li element
     const listItem = document.createElement("li");
