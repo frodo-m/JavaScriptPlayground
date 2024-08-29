@@ -814,29 +814,6 @@ const sumOfTripledEvens = (array) => {
   return sum;
 };
 
-let LotR = ["Bilbo", "Gandalf", "Nazgul"];
-
-LotR.forEach((hero, index, array) => {
-  console.log(`Hero: ${hero}. Index: ${index}. Array: ${array}`);
-})
-
-const bilboInc = LotR.includes('Bilbo');
-const bilboIndx = LotR.indexOf('Bilbo');
-
-let findUsers = [
-  { id: 1, name: "John" },
-  { id: 2, name: "Xander" },
-  { id: 3, name: "Seraphina" },
-  { id: 4, name: "John" },
-];
-
-
-const foundUser = findUsers.find((user) => user.id === 1);
-const findUserIndx = findUsers.findIndex(user => user.name === 'John');
-const findTheLastJohn = findUsers.findLastIndex(user => user.name === 'John');
-const filterUsers = findUsers.filter(user => user.id <= 3);
-const mapUsers = findUsers.map(user => user.name.length);
-
 const splicedArr = numarr.splice(33, 4);
 const slicedArr = numarr.slice(44, 56);
 const slicedSplicedArr = numarr.slice().splice(58, 9);
@@ -847,13 +824,6 @@ const productOfAllOdds = odds.reduce((total, currentItem) => {
   return total * currentItem;
 }, 1);
 
-console.log('Does it include Bilbo?', bilboInc);
-console.log('What is his index?', bilboIndx)
-console.log('Found who?', foundUser.name + '!')
-console.log('Where is he? ', findUserIndx);
-console.log('Where is the last John? ', findTheLastJohn);
-console.log('Only 3 IDs', filterUsers);
-console.log('How long is the length of the users names?', mapUsers);
 console.log('Parent array:', numarr);
 console.log('Spliced:', splicedArr);
 console.log('Sliced: ', slicedArr);
@@ -863,3 +833,114 @@ console.log('Sum of triples:', sumOfTripledEvens(numarr));
 console.log('Odd filtered:', odds);
 console.log('Trippled map:', trippledEvens);
 console.log('Product of all odds reduce:', productOfAllOdds);
+
+let LotR = ["Bilbo", "Gandalf", "Nazgul"];
+
+LotR.forEach((hero, index, array) => {
+  console.log(`Hero: ${hero}. Index: ${index}. Array: ${array}`);
+})
+
+const bilboInc = LotR.includes('Bilbo');
+const bilboIndx = LotR.indexOf('Bilbo');
+
+console.log('Does it include Bilbo?', bilboInc);
+console.log('What is his index?', bilboIndx);
+console.log('Joined: ', LotR.join(' - '));
+
+
+let findUsers = [
+  { id: 1, name: "John" },
+  { id: 2, name: "Xander" },
+  { id: 3, name: "Seraphina" },
+  { id: 4, name: "John" },
+];
+
+const foundUser = findUsers.find((user) => user.id === 1);
+const findUserIndx = findUsers.findIndex(user => user.name === 'John');
+const findTheLastJohn = findUsers.findLastIndex(user => user.name === 'John');
+const filterUsers = findUsers.filter(user => user.id <= 3);
+const mapUsers = findUsers.map(user => user.name.length);
+
+console.log('Found who?', foundUser.name + '!')
+console.log('Where is he? ', findUserIndx);
+console.log('Where is the last John? ', findTheLastJohn);
+console.log('Only 3 IDs', filterUsers);
+console.log('How long is the length of the users names?', mapUsers);
+
+
+
+const numArr2 = [53, 1, 4, 5, 7, 18, 83];
+
+console.log('Reversed: ', numArr2.reverse());
+console.log('Sorted?!!: ', numArr2.sort());
+console.log('Now sorted: ', numArr2.sort((a, b) => {
+  if (a > b) return 1;
+  if (a == b) return 0;
+  if (a < b) return -1;
+}));
+console.log('Reverse sorter', numArr2.sort((a, b) => b - a));
+
+
+const countries = ['Österreich', 'Andorra', 'Vietnam'];
+
+console.log('Soted countries: ', countries.sort((a, b) => a > b ? 1 : -1));
+console.log('Another soter: ', countries.sort((a, b) => a.localeCompare(b)));
+
+const LotRnames = 'Bilbo, Gandalf, Nazgul';
+const splittedLotRNames = LotRnames.split(', ');
+console.log('Splited: ', splittedLotRNames);
+for (let name of splittedLotRNames) {
+  console.log(`A message for ${name}`);
+};
+
+const reducedArr = [1, 2, 3, 4, 5];
+let reducedResult = reducedArr.reduce((sum, current) => sum + current, 10);
+console.log(`Sum of the array values = ${reducedResult} Reduced?! 🤔 Array Length = ${[reducedResult].length}, 
+instead of the original unreduced array length = ${reducedArr.length}, and that's why it is called reduce! 😉`);
+
+const armyReq = {
+  minAge: 18,
+  maxAge: 27,
+  canJoin(user) {
+    return user.age >= this.minAge && user.age < this.maxAge;
+  },
+};
+const armyUsers = [
+  { age: 16 },
+  { age: 20 },
+  { age: 23 },
+  { age: 30 },
+  { age: 32 },
+  { age: 28 },
+]
+// less readable
+// let soldiers = armyUsers.filter(armyReq.canJoin, armyReq);
+// more readable
+let soldiers = armyUsers.filter(user => armyReq.canJoin(user));
+console.log(soldiers.length);
+console.log(soldiers[0].age);
+console.log(soldiers[1].age);
+
+const camelize = (input) => {
+  const str = Array.isArray(input) ? input[0] : input;
+  return str.split('-')
+    .map(
+      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join('');
+}
+
+
+console.log(camelize('hello-world-this-is-camelization'));
+console.log(camelize(['hello', 'worlds', 'this', 'is', 'camelization']));
+
+function filtered(array, a, b) {
+  return array.splice(item => item <= a && item <= b);
+}
+
+function filterRange(arr, a, b) {
+  return arr.filter((num) => (num >= a && num <= b));
+}
+let arrrrr = [5, 3, 8, 1];
+let filteeez = filterRange(arrrrr, 1, 4);
+console.log(filterRange(filteeez));
