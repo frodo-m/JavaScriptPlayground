@@ -764,4 +764,102 @@ listMenu.addEventListener('click', (e) => {
   }
 });
 
+// Get object prompt
+const getObjName = document.querySelector('#getObjName');
 
+const user = {
+  firstName: 'dodo',
+  'last name': 'baggins',
+  age: 26,
+}
+
+const getUserPrompt = () => {
+  let getPrompt = prompt('What do you want to know about the user?', 'first name').toLowerCase();
+
+  if (getPrompt === 'first name') {
+    alert(user.firstName);
+  } else if (getPrompt === 'last name') {
+    alert(user['last name']);
+  } else {
+    alert('Input first name or last name');
+  }
+
+  for (let key in user) {
+    console.log('using for...in', key);
+    console.log('using for...in', user[key]);
+  }
+  const promptP = document.createElement('p');
+  promptP.textContent = 'check the console.';
+
+  document.body.appendChild(promptP);
+}
+
+getObjName.addEventListener('click', getUserPrompt);
+
+
+const numarr = [];
+
+for (let i = 1; i <= 100; i++) {
+  numarr.push(i);
+}
+
+const sumOfTripledEvens = (array) => {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+      const triplledEvens = array[i] * 3;
+      sum += triplledEvens;
+    }
+  }
+  return sum;
+};
+
+let LotR = ["Bilbo", "Gandalf", "Nazgul"];
+
+LotR.forEach((hero, index, array) => {
+  console.log(`Hero: ${hero}. Index: ${index}. Array: ${array}`);
+})
+
+const bilboInc = LotR.includes('Bilbo');
+const bilboIndx = LotR.indexOf('Bilbo');
+
+let findUsers = [
+  { id: 1, name: "John" },
+  { id: 2, name: "Xander" },
+  { id: 3, name: "Seraphina" },
+  { id: 4, name: "John" },
+];
+
+
+const foundUser = findUsers.find((user) => user.id === 1);
+const findUserIndx = findUsers.findIndex(user => user.name === 'John');
+const findTheLastJohn = findUsers.findLastIndex(user => user.name === 'John');
+const filterUsers = findUsers.filter(user => user.id <= 3);
+const mapUsers = findUsers.map(user => user.name.length);
+
+const splicedArr = numarr.splice(33, 4);
+const slicedArr = numarr.slice(44, 56);
+const slicedSplicedArr = numarr.slice().splice(58, 9);
+const concatNumArr = numarr.slice(54, 57).concat('hello concatatoto');
+const odds = numarr.filter((num) => num % 2 !== 0);
+const trippledEvens = numarr.filter((num) => num % 2 === 0).map((num) => num * 3);
+const productOfAllOdds = odds.reduce((total, currentItem) => {
+  return total * currentItem;
+}, 1);
+
+console.log('Does it include Bilbo?', bilboInc);
+console.log('What is his index?', bilboIndx)
+console.log('Found who?', foundUser.name + '!')
+console.log('Where is he? ', findUserIndx);
+console.log('Where is the last John? ', findTheLastJohn);
+console.log('Only 3 IDs', filterUsers);
+console.log('How long is the length of the users names?', mapUsers);
+console.log('Parent array:', numarr);
+console.log('Spliced:', splicedArr);
+console.log('Sliced: ', slicedArr);
+console.log('Sliced Spliced:', slicedSplicedArr);
+console.log('concatinated: ', concatNumArr);
+console.log('Sum of triples:', sumOfTripledEvens(numarr));
+console.log('Odd filtered:', odds);
+console.log('Trippled map:', trippledEvens);
+console.log('Product of all odds reduce:', productOfAllOdds);
